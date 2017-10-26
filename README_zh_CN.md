@@ -16,18 +16,18 @@ mvn install
 
 
 #在当前用户根目录下创建.minlia-cross目录, 即创建cross的根目录
-mkdir -p ~/.minlia-cross
+mkdir -p ~/.minlia-cross/{bin,conf}
 #在当前打开的命令行窗口中定义cross根目录常量
 export CROSS_HOME=~/.minlia-cross
 #在当前打开的命令行窗口中定义执行器的常量
-export CROSS_EXECUTOR=${CROSS_HOME}/cross-client-1.0.1-SNAPSHOT.jar
+export CROSS_EXECUTOR=${CROSS_HOME}/bin/cross-client-1.0.1-SNAPSHOT.jar
 
 #复制当前编译出来的可执行jar文件到cross根目录
-\cp -rpf target/*.jar ${CROSS_HOME}
+\cp -rpf target/*.jar ${CROSS_HOME}/bin/
 #复制示例配置文件到cross根目录, 以后需要自定义的时候到此目录配置
 \cp -rpf src/main/resources/custom/*.properties ${CROSS_HOME}/conf
 #执行一个自定义的配置文件
-java -jar ${CROSS_EXECUTOR} --spring.config.location=${CROSS_HOME}/will.properties
+java -jar ${CROSS_EXECUTOR} --spring.config.location=${CROSS_HOME}/conf/will.properties
 
 
 ```
@@ -41,13 +41,13 @@ cat ~/.bash_profile
 #定义常量
 export CROSS_HOME=~/.minlia-cross
 #定义常量
-export CROSS_EXECUTOR=${CROSS_HOME}/cross-client-1.0.1-SNAPSHOT.jar
+export CROSS_EXECUTOR=${CROSS_HOME}/bin/cross-client-1.0.1-SNAPSHOT.jar
 #定义别名
-alias will="java -jar ${CROSS_EXECUTOR} --spring.config.location=${CROSS_HOME}/will.properties"
+alias will="java -jar ${CROSS_EXECUTOR} --spring.config.location=${CROSS_HOME}/conf/will.properties"
 #定义别名
-alias cloud="java -jar ${CROSS_EXECUTOR} --spring.config.location=${CROSS_HOME}/cloud.properties"
+alias cloud="java -jar ${CROSS_EXECUTOR} --spring.config.location=${CROSS_HOME}/conf/cloud.properties"
 #定义别名
-alias mini="java -jar ${CROSS_EXECUTOR} --spring.config.location=${CROSS_HOME}/mini.properties"
+alias mini="java -jar ${CROSS_EXECUTOR} --spring.config.location=${CROSS_HOME}/conf/mini.properties"
 
 #使定义的配置立即生效
 source ~/.bash_profile
