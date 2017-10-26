@@ -13,18 +13,18 @@ import org.springframework.web.bind.annotation.RestController;
 @SpringBootApplication
 public class CrossClientApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(CrossClientApplication.class, args);
-	}
+  public static void main(String[] args) {
+    SpringApplication.run(CrossClientApplication.class, args);
+  }
 
 
-	@RestController
-	@RequestMapping
-	public class HelloWorld{
+  @RestController
+  @RequestMapping
+  public class HelloWorld {
 
-		@GetMapping(value = {"/","/index","index.htm","index.html"})
-		public String ok(){
-			return "OK";
-		}
-	}
+    @GetMapping(value = {"/", "/index", "index.htm", "index.html"})
+    public String ok() {
+      return "OK";
+    }
+  }
 }
