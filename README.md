@@ -28,13 +28,13 @@ alias mini="java -jar ${CROSS_EXECUTOR} --spring.config.location=${CROSS_HOME}/c
 source ~/.bash_profile
 
 mini
-Cross Access Address: http://mini.dev.chinfan.io
+Cross Access Address: http://mini-for-test-only.dev.chinfan.io
 
 cloud
-Cross Access Address: http://cloud.dev.chinfan.io
+Cross Access Address: http://cloud-for-test-only.dev.chinfan.io
 
 will
-Cross Access Address: http://will.dev.chinfan.io
+Cross Access Address: http://will-for-test-only.dev.chinfan.io
 
 ```
 

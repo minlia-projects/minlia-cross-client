@@ -55,17 +55,17 @@ source ~/.bash_profile
 #执行上面定义的别名
 mini
 #启动后显示打印的结果
-Cross Access Address: http://mini.dev.chinfan.io
+Cross Access Address: http://mini-for-test-only.dev.chinfan.io
 
 #执行上面定义的别名
 cloud
 #启动后显示打印的结果
-Cross Access Address: http://cloud.dev.chinfan.io
+Cross Access Address: http://cloud-for-test-only.dev.chinfan.io
 
 #执行上面定义的别名
 will
 #启动后显示打印的结果
-Cross Access Address: http://will.dev.chinfan.io
+Cross Access Address: http://will-for-test-only.dev.chinfan.io
 
 ```
 
