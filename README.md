@@ -5,12 +5,12 @@ Install in local
 
 ```
 mvn install
-mkdir -p ~/.minlia-cross
+mkdir -p ~/.minlia-cross/{bin,conf}
 export CROSS_HOME=~/.minlia-cross
 export CROSS_EXECUTOR=${CROSS_HOME}/cross-client-1.0.1-SNAPSHOT.jar
 \cp -rpf target/*.jar ${CROSS_HOME}
-\cp -rpf src/main/resources/custom/*.properties ${CROSS_HOME}
-java -jar ${CROSS_EXECUTOR} --spring.config.location=${CROSS_HOME}/will.properties
+\cp -rpf src/main/resources/custom/*.properties ${CROSS_HOME}/conf/
+java -jar ${CROSS_EXECUTOR} --spring.config.location=${CROSS_HOME}/conf/will.properties
 
 
 
@@ -19,10 +19,10 @@ cat ~/.bash_profile
 
 #for minlia cross only
 export CROSS_HOME=~/.minlia-cross
-export CROSS_EXECUTOR=${CROSS_HOME}/cross-client-1.0.1-SNAPSHOT.jar
-alias will="java -jar ${CROSS_EXECUTOR} --spring.config.location=${CROSS_HOME}/will.properties"
-alias cloud="java -jar ${CROSS_EXECUTOR} --spring.config.location=${CROSS_HOME}/cloud.properties"
-alias mini="java -jar ${CROSS_EXECUTOR} --spring.config.location=${CROSS_HOME}/mini.properties"
+export CROSS_EXECUTOR=${CROSS_HOME}/bin/cross-client-1.0.1-SNAPSHOT.jar
+alias will="java -jar ${CROSS_EXECUTOR} --spring.config.location=${CROSS_HOME}/conf/will.properties"
+alias cloud="java -jar ${CROSS_EXECUTOR} --spring.config.location=${CROSS_HOME}/conf/cloud.properties"
+alias mini="java -jar ${CROSS_EXECUTOR} --spring.config.location=${CROSS_HOME}/conf/mini.properties"
 
 
 source ~/.bash_profile
